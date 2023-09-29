@@ -15,8 +15,8 @@
     })
 
     function themeMode() {
-        if(localStorage.gettItem("theme") !== null){
-            if(localStorage.gettItem("theme") === "light"){ 
+        if(localStorage.getItem("theme") !== null){
+            if(localStorage.getItem("theme") === "light"){ 
                 document.body.classList.remove("dark");
             }else{
                 document.body.classList.add("dark");

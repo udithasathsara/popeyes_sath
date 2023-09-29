@@ -14,12 +14,12 @@
                 $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);   
         ?>
         <div class="profile">
-            <img src="../uploaded_img/<?= $fetch_profile['profile']; ?>" class="logo-img" width="100">
+            <img src="../uploaded_img/<?= $fetch_profile['profile']; ?>" class="logo-img" width="90">
             <p><?= $fetch_profile['name']; ?></p>
         </div>
         <div class="flex-btn">
             <a href="update_profile.php" class="btn">update profile</a>
-            <a href="../components/admin_logout.php" onclick="return confirm('logout from this website')">logout</a>
+            <a href="../components/admin_logout.php" class="btn" onclick="return confirm('logout from this website')">logout</a>
         </div>
         <?php } ?>
     </div>
@@ -33,7 +33,7 @@
                 $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);   
         ?>
         <div class="profile">
-            <img src="../uploaded_img/<?= $fetch_profile['profile']; ?>" class="logo-img" width="100">
+            <img src="../uploaded_img/<?= $fetch_profile['profile']; ?>" class="logo-img" width="90">
             <p><?= $fetch_profile['name']; ?></p>
         </div>
         <?php } ?>

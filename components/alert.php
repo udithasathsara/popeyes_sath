@@ -22,6 +22,4 @@
             echo '<script>swal("'.$error_msg.'", "","error");</script>';
         }
     }
-
-
 ?>
