@@ -29,6 +29,7 @@
         <section class="dashboard">
             <h1 class="heading">dashboard</h1>
             <div class="box-container">
+            <form>
                 <div class="box">
                     <h3>welcome!</h3>
                     <p><?= $fetch_profile['name']; ?></p>
@@ -52,7 +53,7 @@
                     ?>
                     <h3><?= $number_of_post; ?></h3>
                     <p>products added</p>
-                    <a href="admin_posts.php" class="btn">add new products<a>
+                    <a href="add_posts.php" class="btn">Add new products<a>
                 </div>
                 <div class="box">
                     <?php
@@ -62,7 +63,7 @@
                     ?>
                     <h3><?= $number_of_active_post; ?></h3>
                     <p>total active products</p>
-                    <a href="admin_posts.php" class="btn">see products<a>
+                    <a href="view_posts.php" class="btn">See products<a>
                 </div>
                 <div class="box">
                     <?php
@@ -71,10 +72,71 @@
                        $number_of_deactive_post = $select_deactive_post->rowCount();
                     ?>
                     <h3><?= $number_of_deactive_post; ?></h3>
-                    <p>total active products</p>
-                    <a href="admin_posts.php" class="btn">see products<a>
+                    <p>total deactive products</p>
+                    <a href="view_posts.php" class="btn">See products<a>
+                </div>
+                <div class="box">
+                    <?php
+                       $select_users = $conn->prepare("SELECT * FROM `users`");
+                       $select_users->execute();
+                       $number_of_users = $select_users->rowCount();
+                    ?>
+                    <h3><?= $number_of_users; ?></h3>
+                    <p>user accounts</p>
+                    <a href="user_accounts.php" class="btn">See users<a>
+                </div>
+                <div class="box">
+                    <?php
+                       $select_admin = $conn->prepare("SELECT * FROM `admin`");
+                       $select_admin->execute();
+                       $number_of_admin = $select_admin->rowCount();
+                    ?>
+                    <h3><?= $number_of_admin; ?></h3>
+                    <p>admin accounts</p>
+                    <a href="user_accounts.php" class="btn">See admin<a>
+                </div>
+                <div class="box">
+                    <?php
+                       $select_reservation = $conn->prepare("SELECT * FROM `reservation`");
+                       $select_reservation->execute();
+                       $num_of_reservation = $select_reservation->rowCount();
+                    ?>
+                    <h3><?= $num_of_reservation; ?></h3>
+                    <p>total reservation</p>
+                    <a href="admin_reservation.php" class="btn">Total reservations<a>
+                </div>
+                <div class="box">
+                    <?php
+                       $select_canceled_order = $conn->prepare("SELECT * FROM `orders` WHERE status=?");
+                       $select_canceled_order->execute(['canceled']);
+                       $total_canceled_order = $select_canceled_order->rowCount();
+                    ?>
+                    <h3><?= $total_canceled_order; ?></h3>
+                    <p>total canceled orders</p>
+                    <a href="admin_order.php" class="btn">Canceled order<a>
+                </div>
+                <div class="box">
+                    <?php
+                       $select_confirm_order = $conn->prepare("SELECT * FROM `orders` WHERE status=?");
+                       $select_confirm_order->execute(['in progress']);
+                       $total_confirm_order = $select_confirm_order->rowCount();
+                    ?>
+                    <h3><?= $total_confirm_order; ?></h3>
+                    <p>total confirm orders</p>
+                    <a href="admin_order.php" class="btn">Confirm order<a>
+                </div>
+                <div class="box">
+                    <?php
+                       $select_total_order = $conn->prepare("SELECT * FROM `orders`");
+                       $select_total_order->execute();
+                       $total_total_order = $select_total_order->rowCount();
+                    ?>
+                    <h3><?= $total_total_order; ?></h3>
+                    <p>total orders</p>
+                    <a href="admin_order.php" class="btn">All orders<a>
                 </div>
             </div>
+            </form>
         </section>
     </div>
     <?php include '../components/dark.php'; ?>

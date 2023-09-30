@@ -122,7 +122,7 @@ form p{
 }
 .box-container{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-template-columns: repeat(auto-fit,minmax(24rem,1fr));
     align-items: center;
 }
 .box-container .box{
@@ -398,6 +398,182 @@ form span{
 .flex-btn{
     display: flex;
 
+}
+/*---------------dashboard----------------------------*/
+.box-container{
+    align-items: center;
+}
+.dashboard .box-container .box{
+    text-align: center;
+    box-shadow: var(--inner-box-shadow);
+    border-radius: .5rem;
+    padding: 1.5rem;
+    padding-bottom: 3rem;
+
+}
+.dashboard .box-container .box h3{
+    font-size: 2.7rem;
+    margin-bottom: -1rem;
+    color: var(--black);
+}
+
+.dashboard .box-container .box p{
+    padding: 1rem;
+    font-size: 1.8rem;
+    margin: 1rem 0;
+    text-transform: capitalize;
+    color: var(--color);
+}
+/*---------------show post---------------------------*/
+.show-post .box-container .box{
+    position: relative;
+    margin: 1rem;
+    min-height: 20vh;
+    padding: 1rem;
+}
+.show-post .box-container .box .image{
+    height: 15rem;
+    width: 100%;
+    object-fit: contain;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+.show-post .box-container .box .status{
+    position: absolute;
+    left: -4%;
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+    display: inline-block;
+    box-shadow: var(--outer-shadow);
+}
+
+.show-post .box-container .box .price{
+    position: absolute;
+    right: 5%;
+    top: 3%;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--orange);
+}
+.show-post .box-container .box .title{
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--orange);
+    margin-bottom: 1rem;
+}
+.show-post .box-container .box .posts-content{
+    font-size: 1.3rem;
+    color: var(--lightgray);
+    line-height: 1.5;
+    padding: 1rem 0;
+}
+.show-post .box-container .box .btn{
+    margin: .2rem;
+    padding: 1rem 1.5rem;
+    width: 30%;
+    text-align: center;
+}
+.show-post .box-container .box button{
+    width: 30%;
+}
+.post-editor img{
+    width: 100%;
+}
+/*---------------read post----------------------------*/
+.read-post{
+    display: flex;
+    flex-direction: column;
+    border-radius: .5rem;
+}
+.read-post form{
+    width: 100%;
+    border-radius: .5rem;
+    padding: 2rem;
+    box-shadow: var(--inner-box-shadow);
+    position: relative;
+}
+.read-post form .status{
+    border-radius: .5rem;
+    padding: .5rem 2rem;
+    font-size: 1.1rem;
+    display: inline-block;
+    text-transform: uppercase;
+}
+.read-post form .price{
+    position: absolute;
+    top: 2%;
+    right: 5%;
+    font-weight: bold;
+    color: var(--orange);
+    font-size: 2rem;
+}
+.read-post form .image{
+    width: 100%;
+    border-radius: .5rem;
+    margin-top: 1.5rem;
+}
+.read-post form .title{
+    color: var(--orange);
+    font-size: 2.5rem;
+    margin-top: 1.5rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+.read-post form .content{
+    line-height: 2;
+    font-size: 1.2rem;
+    color: var(--lightgray);
+    padding: 1rem 0;
+}
+.read-post form .flex-btn{
+    justify-content: space-between;
+}
+.read-post form .flex-btn .btn{
+    margin: .2rem;
+    padding: 1rem 1.5rem;
+    width: 33%;
+    text-align: center;
+}
+.read-post form .flex-btn .btn a{
+    height: 50px;
+    margin-top: .8rem;
+
+}
+.post-editor form .flex-btn .btn{
+    margin: .2rem;
+    padding: 1rem 1.5rem;
+    width: 50%;
+    text-align: center;
+}
+/*---------------message container----------------------------*/
+.message-container .box-container{
+    display: grid;
+    align-items: center;
+}
+.message-container .box-container .box{
+    line-height: 2;
+    padding: 2rem;
+    border-radius: .5rem;
+    color: var(--color);
+}
+.message-container .box-container .box:hover{
+    box-shadow: var(--outer-shadow);
+}
+.message-container .box-container .box span{
+    text-transform: capitalize;
+}
+.message-container .box-container .box .name{
+    text-transform: capitalize;
+    color: var(--lightgray);
+    font-size: 1.5rem;
+}
+.message-container .box-container .box h4{
+    text-transform: capitalize;
+    color: var(--orange);
 }
 /*---------------media screen----------------------------*/
 @media screen and (max-width: 991px) {

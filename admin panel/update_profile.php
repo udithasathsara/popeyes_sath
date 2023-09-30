@@ -138,7 +138,7 @@
                     </div>
                     <div class="input-field">
                         <label>old password <sup>*</sup></label>
-                        <input type="password" name= "old_pass" maxlength="20" placeholder="Enter Pld Password" 
+                        <input type="password" name= "old_pass" maxlength="20" placeholder="Enter Old Password" 
                         oninput="this.value.replace(/\s/g,'')">
                     </div>
                     <div class="input-field">
