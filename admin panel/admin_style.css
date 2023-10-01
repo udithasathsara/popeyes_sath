@@ -363,16 +363,16 @@ header .right{
     border-radius: 50%;
 }
 /*---------------login form------------------------------*/
-#admin_login{
+#admin-login{
     margin: 1rem auto;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-#admin_login .btn{
+#admin-login .btn{
     width: 100%;
 }
-#admin_login .profile{
+#admin-login .profile{
     margin-top: -8rem;
     background: var(--background-color);
 }
@@ -574,6 +574,118 @@ form span{
 .message-container .box-container .box h4{
     text-transform: capitalize;
     color: var(--orange);
+}
+/*---------------order container---------------------------*/
+.order-container .box-container .box{
+    padding: 1rem;
+    border-radius: .5rem;
+    position: relative;
+}
+.order-container .box-container .box .flex-btn{
+    display: flex;
+    justify-content: space-between;
+}
+.order-container .box-container .box .flex-btn .btn{
+    width: 45%;
+    text-align: center;
+    border-radius: 20px;
+}
+.order-container .box-container .box .status{
+    position: absolute;
+    left: -4%;
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    border-radius: .5rem;
+    box-shadow: var(--inner-box-shadow);
+    display: inline-block;
+    padding: .5rem;
+}
+.order-container .box-container .box .detail{
+    margin-top: 3rem;
+    line-height: 2;
+    color: var(--lightgray);
+    text-transform: capitalize;
+}
+.order-container .box-container .box .detail span{
+    text-transform: none;
+}
+/*---------------review container----------------------------*/
+.reviews-container .box-container .box{
+    border-radius: .5rem;
+    padding: 1.5rem;
+    position: relative;
+}
+.reviews-container .box-container .box .ratings{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    color: var(--orange);
+    font-size: 2rem;
+    padding: .2rem;
+    border-radius: .5rem;
+}
+.reviews-container .box-container .box .user{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+.reviews-container .box-container .box .user img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    padding: .5rem;
+    box-shadow: var(--inner-box-shadow);
+}
+.reviews-container .box-container .box .user p{
+    color: var(--lightgray);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-top: .2rem;
+}
+.reviews-container .box-container .box .user span{
+    color: var(--orange);
+}
+.reviews-container .box-container .box .title{
+    color: green;
+    text-transform: capitalize;
+    margin: 1rem 0;
+}
+.reviews-container .box-container .box .description{
+    font-size: 1rem;
+    color: var(--lightgray);
+    line-height: 2;
+    white-space: pre-line;
+    margin-bottom: 1rem;
+}
+/*---------------user account------------------------*/
+.accounts .box-container{
+    margin-top: 3rem;
+}
+.accounts .box-container .box{
+    text-align: center;
+    padding: 2rem;
+    border-radius: .5rem;
+    text-transform: capitalize;
+    line-height: 2;
+    color: var(--lightgray);
+    margin-bottom: 2.5rem;
+}
+.accounts .box-container .box:hover{
+    box-shadow: var(--outer-shadow);
+}
+.accounts .box-container .box span{
+    text-transform: none;
+}
+.accounts .box-container .box img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: var(--inner-box-shadow);
+    padding: .5rem;
+    margin-top: -5rem;
+    margin-bottom: 1rem;
 }
 /*---------------media screen----------------------------*/
 @media screen and (max-width: 991px) {

@@ -135,6 +135,16 @@
                     <p>total orders</p>
                     <a href="admin_order.php" class="btn">All orders<a>
                 </div>
+                <div class="box">
+                    <?php
+                       $select_reviews = $conn->prepare("SELECT * FROM `reviews`");
+                       $select_reviews->execute();
+                       $number_of_reviews = $select_reviews->rowCount();
+                    ?>
+                    <h3><?= $number_of_reviews; ?></h3>
+                    <p>total reviews</p>
+                    <a href="comments.php" class="btn">See reviews<a>
+                </div>
             </div>
             </form>
         </section>
