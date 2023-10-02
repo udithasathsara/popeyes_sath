@@ -6,8 +6,18 @@
     <div class="logo1">
         <div class="bx bxs-user" id="user-btn"></div>
         <div class="bx bx-menu" id="menu-btn"></div>
-        <a href="wishlist.php" class="cart-btn"><i class="bx bx-heart"></i><sup>0</sup></a>
-        <a href="cart.php" class="cart-btn"><i class="bx bx-cart"></i><sup>0</sup></a>
+        <?php
+            $count_wishlist_item = $conn->prepare("SELECT * FROM `wishlist` WHERE user_id=?");
+            $count_wishlist_item->execute([$user_id]);
+            $total_wishlist_items = $count_wishlist_item->rowCount();
+        ?>
+        <a href="wishlist.php" class="cart-btn"><i class="bx bx-heart"></i><sup><?= $total_wishlist_items; ?></sup></a>
+        <?php
+            $count_cart_item = $conn->prepare("SELECT * FROM `cart` WHERE user_id=?");
+            $count_cart_item->execute([$user_id]);
+            $total_cart_items = $count_cart_item->rowCount();
+        ?>
+        <a href="cart.php" class="cart-btn"><i class="bx bx-cart"></i><sup><?= $total_cart_items; ?></sup></a>
     </div>
     <!---------profile detail------->
     <div class="profile-detail">
@@ -23,9 +33,8 @@
         </div>
         <div class="flex-btn">
             <a href="update_profile.php" class="btn" style="width:200px;">update profile</a>
-            <form method="post">
-                <button type="submit" name="logout" class="btn" style="width:150px;">log out</button>
-            </form>
+            <a href="components/user_logout.php" class="btn" onclick="return confirm('logout from this website')">logout</a>
+
         </div>
         <?php }else{ ?>
             <p class="name">please login or register first!</p>
@@ -52,6 +61,7 @@
                 <img src="image/user.jpg" class="logo-image">
                 <p>user</p>
             </div>
+            <?php } ?>
             <ul>
                 <li><a href="home.php"><i class="bx bxs-home-smile"></i>home</a></li>
                 <li><a href="about.php"><i class="bx bxs-shopping-bags"></i>about</a></li>
@@ -69,8 +79,7 @@
                 <i class="bx bxl-twitter"></i>
                 <i class="bx bxl-pinterest-alt"></i>
             </div>
-        <?php } ?>
-    </div>
+        </div>
 </header>
 </div>
 

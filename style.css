@@ -141,6 +141,48 @@ form p{
     box-shadow: var(--inner-box-shadow);
     padding: 1rem;
 }
+/*---------------login form------------------------------*/
+#admin-login{
+    margin: 7rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#admin-login .btn{
+    width: 100%;
+}
+#admin-login .profile img{
+    width: 120px;
+    height: 120px;
+    margin-top: 6%;
+    background: var(--background-color);
+    border-radius: 50%;
+    border: 3px solid var(--orange);
+    padding: .5rem;
+}
+form h3{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--orange);
+}
+form span{
+    color: var(--orange);
+}
+.form_container form input[type="submit"]{
+    width: 49%;
+    cursor: pointer;
+    margin: .5rem;
+}
+.post-editor textarea{
+    height: 15rem;
+    resize: none;
+}
+.flex-btn{
+    display: flex;
+
+}
 .box-container{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(24rem,1fr));
@@ -292,7 +334,7 @@ header sup{
     justify-content: space-evenly;
 }
 .profile-detail .flex-btn .btn{
-    padding: .5rem 2rem;
+    padding: 1rem 2rem;
     margin: 0 1rem;
 }
 .profile{
@@ -561,6 +603,7 @@ footer .bottom span{
 .products .box-container .box h3{
     text-transform: capitalize;
     color: var(--lightgray);
+    font-size: 18px;
 }
 .products .box-container .box .price{
     position: absolute;
@@ -630,4 +673,227 @@ footer .bottom span{
 .client .box img{
     background: var(--orange);
     border-radius: 50%;
+}
+/*----------------banner----------------*/
+.banner{
+    background-image: var(--banner-img);
+    width: 100%;
+    min-height: 55vh;
+    position: relative;
+    text-transform: capitalize;
+    margin-top: 2rem;
+    background-repeat: no-repeat;
+}
+.banner .detail{
+    position: absolute;
+    left: 5%;
+    top: 20%;
+    color: var(--lightgray);
+    text-transform: uppercase;
+}
+.banner .detail i{
+    margin: 0 .5rem;
+    margin-top: -1rem;
+    margin-bottom: -1rem;
+}
+.banner a{
+    text-transform: uppercase;
+    color: var(--lightgray);
+}
+/*----------------about us----------------*/
+.about-us .box-container .box:nth-child(1){
+    padding-left: 8%;
+}
+.about-us .box-container h1{
+    font-size: 2.5rem;
+    color: var(--color);
+    margin: 1rem 0;
+}
+.about-us .box-container span,
+.process span{
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: var(--lightgray);
+}
+.about-us .box-container p{
+    line-height: 2;
+    color: var(--lightgray);
+    margin-bottom: 1rem;
+}
+.about-us .box-container .box:nth-child(2) img{
+    width: 100%;
+}
+.about-us .service{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+}
+.about-us .img{
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: var(--inner-box-shadow);
+    border-radius: 50%;
+    margin: 1rem;
+}
+.about-us .service p{
+    margin-left: 1rem;
+    text-transform: capitalize;
+}
+.about-us .service .img:hover{
+    box-shadow: var(--outer-shadow);
+}
+.process .box-container{
+    justify-content: space-evenly;
+    color: var(--lightgray);
+}
+.process .box-container .box:nth-child(1){
+    margin-left: 16%;
+}
+.process .box-container .steps{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--lightgray);
+}
+.process .box-container .steps .img-box .img{
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: var(--inner-box-shadow);
+    padding: .5rem;
+    margin: 1rem;
+}
+.process .box-container .steps span{
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 28px;
+    color: var(--orange);
+    display: inline-block;
+    text-align: center;
+    box-shadow: var(--inner-box-shadow);
+    border-radius: 50%;
+    margin-bottom: 15px;
+    font-family: 'Alkatra', cursive;
+    font-weight: bold;
+}
+.process .box-container .steps p{
+    font-size: 16px;
+    text-transform: capitalize;
+}
+.team{
+    padding: 4% 8%;
+}
+.team span{
+    color: var(--color);
+}
+.team .box-container{
+    margin: 1rem auto;
+    grid-template-columns: repeat(auto-fit,minmax(20rem,1fr));
+}
+.team .box-container .box{
+    margin: 3rem 0;
+}
+.team .box-container .img-box{
+    width: 270px;
+    height: 270px;
+    box-shadow: var(--inner-box-shadow);
+    border-radius: 50%;
+    position: relative;
+    text-align: center;
+    z-index: -1;
+}
+.team .box-container .img-box::before{
+    position: absolute;
+    content: '';
+    top: 20px;
+    left: 20px;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    background-color: transparent;
+    border-radius: 50%;
+    z-index: -3;
+    transition: all .5s;   
+}
+.team .box-container .box:hover .img-box::before{
+    background-color: var(--orange);
+}
+.team .box-container .img-box img{
+    max-width: 100%;
+    height: auto;
+    border-radius: none;
+    margin-top: -45px;
+}
+.team .box-container .detail{
+    width: 90%;
+    box-shadow: var(--inner-box-shadow);
+    z-index: 10;
+    padding: 2rem 0;
+    border-radius: 40px;
+    text-align: center;
+    margin-top: -3rem;
+    background-color: var(--background-color);
+}
+.team .box-container .detail h1{
+    text-transform: capitalize;
+    color: var(--color);
+    padding-bottom: 1rem;
+    font-size: 20px;
+}
+.team .box-container .detail .social-links{
+    padding-bottom: 0;
+}
+.team .box-container .detail .social-links i{
+    border-radius: 50%;
+}
+.reviews{
+    padding: 4% 8%;
+}
+.reviews-container .box{
+    box-shadow: var(--inner-box-shadow);
+    padding: 1rem;
+    border-radius: 10px;
+    position: relative;
+}
+.reviews-container .box .user{
+    display: flex;
+    align-items: center;
+}
+.reviews-container .box .user p{
+    text-transform: capitalize;
+    color: var(--lightgray);
+    padding-bottom: .5rem;
+
+}
+.reviews-container .box .user span{
+    color: var(--orange);
+}
+.reviews-container .box .user img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    padding: .5rem;
+    box-shadow: var(--inner-box-shadow);
+    margin-right: 1rem;
+}
+.reviews-container .box .title{
+    text-transform: capitalize;
+    text-align: left;
+    color: var(--lightgray);
+}
+.reviews-container .box .description{
+    color: var(--color);
+}
+.reviews-container .box .ratings{
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    font-size: 2rem;
+    color: var(--orange);
 }

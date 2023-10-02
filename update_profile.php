@@ -1,12 +1,13 @@
 <?php
-    include '../components/connect.php';
+    include 'components/connect.php';
     session_start();
 
-    $admin_id = $_SESSION['admin_id'];
-
-    if (!isset($admin_id)) {
-        header('location:admin_login.php');
+    if (isset($_SESSION['user_id'])) {
+        $user_id = $_SESSION['user_id'];
+    }else {
+        $user_id = '';
     }
+
     if (isset($_POST['submit'])) {
         
         //update name
@@ -14,14 +15,14 @@
         $name = filter_var($name, FILTER_SANITIZE_STRING);
 
         if (!empty($name)) {
-            $select_name = $conn->prepare("SELECT * FROM `admin` WHERE name=?");
+            $select_name = $conn->prepare("SELECT * FROM `users` WHERE name=?");
             $select_name->execute([$name]);
 
             if ($select_name->rowCount() > 0){
                 $warning_msg[] = 'username already exists';
             }else{
-                $update_name = $conn->prepare("UPDATE `admin` SET name = ? WHERE id=?");
-                $update_name->execute([$name, $admin_id]);
+                $update_name = $conn->prepare("UPDATE `users` SET name = ? WHERE id=?");
+                $update_name->execute([$name, $user_id]);
                 $success_msg[]='name update succesfuly';
             }
         }
@@ -31,14 +32,14 @@
         $email = filter_var($email, FILTER_SANITIZE_STRING);
         
         if (!empty($email)) {
-            $select_email = $conn->prepare("SELECT * FROM `admin` WHERE email=?");
+            $select_email = $conn->prepare("SELECT * FROM `users` WHERE email=?");
             $select_email->execute([$email]);
         
             if ($select_email->rowCount() > 0){
                 $warning_msg[] = 'email already exists';
             }else{
-                $update_email = $conn->prepare("UPDATE `admin` SET email = ? WHERE id=?");
-                $update_email->execute([$email,$admin_id]);
+                $update_email = $conn->prepare("UPDATE `users` SET email = ? WHERE id=?");
+                $update_email->execute([$email,$user_id]);
                 $success_msg[]='email update succesfuly';
                 }
         }
@@ -48,13 +49,13 @@
         $image = $_FILES['image']['name'];
         $image = filter_var($image, FILTER_SANITIZE_STRING);
         $image_tmp_name = $_FILES['image']['tmp_name'];
-        $image_folder = '../uploaded_img/'.$image;
+        $image_folder = 'uploaded_img/'.$image;
 
-        $update_image = $conn->prepare("UPDATE `admin` SET profile = ? WHERE id=?" );
-        $update_image-> execute([$image, $admin_id]);
+        $update_image = $conn->prepare("UPDATE `users` SET profile = ? WHERE id=?" );
+        $update_image-> execute([$image, $user_id]);
         move_uploaded_file($image_tmp_name,$image_folder);
         if($old_image != $image AND $old_image != ''){
-            $old_image_path = '../uploaded_img/' . $old_image;
+            $old_image_path = 'uploaded_img/' . $old_image;
             if (file_exists($old_image_path)) {
                 unlink($old_image_path);
             }
@@ -63,8 +64,8 @@
 
         //update password
         $empty_pass = 'da39a3ee5e6b4b0d3255bfef95601890afd80709';
-        $select_old_pass = $conn->prepare("SELECT password FROM `admin` WHERE id=?");
-        $select_old_pass->execute([$admin_id]);
+        $select_old_pass = $conn->prepare("SELECT password FROM `users` WHERE id=?");
+        $select_old_pass->execute([$user_id]);
 
         $fetch_prev_pass = $select_old_pass->fetch(PDO::FETCH_ASSOC);
         $prev_pass = $fetch_prev_pass['password'];
@@ -86,8 +87,8 @@
                 $warning_msg[] = 'confirm password not matched';
                 }else{
                     if ($new_pass != $empty_pass) {
-                        $update_pass = $conn->prepare("UPDATE `admin` SET password=? WHERE id=?");
-                        $update_pass->execute([$cpass, $admin_id]);
+                        $update_pass = $conn->prepare("UPDATE `users` SET password=? WHERE id=?");
+                        $update_pass->execute([$cpass, $user_id]);
                         $success_msg[]='password updated successfully';
                     }
                     else{
@@ -100,7 +101,7 @@
 ?>
 
 <style>
-    <?php include 'admin_style.css'; ?>
+    <?php include 'style.css'; ?>
 
 </style>
 <!DOCTYPE html>
@@ -112,16 +113,15 @@
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <title>Admin - registration page</title>
+    <title>user update profile page</title>
 </head>
 <body>
-    <div class="main-container">
-        <?php include '../components/admin_header.php'; ?>
-        <section>
+        <?php include 'components/user_header.php'; ?>
+        <section class="form-container">
             <div class="form-container" id="admin-login">
                 <form action="" method="post" enctype="multipart/form-data">
                     <div class="profile">
-                        <img src="../uploaded_img/<?= $fetch_profile['profile']; ?>" class="logo-img">
+                        <img src="uploaded_img/<?= $fetch_profile['profile']; ?>" class="logo-img">
                     </div>
                     <h3> update profile </h3>
                     <input type="hidden" name="old_image" value="<?= $fetch_profile['profile']; ?>">
@@ -158,10 +158,9 @@
                 </form>
             </div>
         </section>
-    </div>
     <?php 
-    include '../components/dark.php';
-    include '../components/alert.php';
+    include 'components/dark.php';
+    include 'components/alert.php';
     ?>
     <script type="text/javascript" src="script.js"></script>
 </body>

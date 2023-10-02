@@ -7,6 +7,10 @@
     }else {
         $user_id = '';
     }
+
+    include 'components/add_wishlist.php';
+    include 'components/add_cart.php';
+
 ?>
 
 <style>
