@@ -83,6 +83,9 @@
                     </div>
                     <input type="hidden" name="product_id" value="<?= $fetch_products['id']; ?>">
                     <div class="flex">
+                        <p class="price">price Rs.<?= $fetch_products['price']; ?>/-</p>
+                    </div>
+                    <div class="flex">
                         <input type="hidden" name="qty" required min="1" value="1" max="99" maxlength="2" class="qty">
                         <a href="checkout.php?get_id=<?= $fetch_products['id']; ?>" class="btn" style="width:100%;">buy now</a>
                     </div>

@@ -656,6 +656,30 @@ footer .bottom span{
     font-size: 1.5rem;
     color: var(--color);
 }
+.cart-total{
+    text-align: center;
+    padding: 4%;
+    margin: 2rem;
+    box-shadow: var(--inner-box-shadow);
+}
+.cart-total p{
+    font-size: 1.4rem;
+    margin: 2rem 0;
+    text-transform: capitalize;
+    color: var(--lightgray);
+}
+.cart-total p span{
+    color:var(--orange) ;
+}
+.cart-total .button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cart-total .btn{
+    margin: .5rem;
+
+}
 .client{
     text-align: center;
     padding: 2% 8%;
@@ -896,4 +920,247 @@ footer .bottom span{
     top: 5%;
     font-size: 2rem;
     color: var(--orange);
+}
+/*---------------view page-----------*/
+.view_page{
+    padding: 4% 8%;
+}
+.view_page .box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 2;
+}
+.view_page .box .detail{
+    padding: 1rem;
+}
+.view_page .box img{
+    width: 100%;
+}
+.view_page .box .product-detail{
+    color: var(--lightgray);
+    margin: 1rem 0;
+}
+.view_page .box .price{
+    font-size: 2rem;
+    color: var(--orange);
+}
+.view_page .box .name{
+    color: var(--color);
+    font-weight: bold;
+    font-size: 2rem;
+}
+/*--------reservation container-------------*/
+.reservation-container{
+    max-width: 60vw;
+    min-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    box-shadow: var(--outer-shadow);
+}
+.reservation-container .form-container{
+    margin: 10rem;
+    margin-bottom: 5rem;
+    margin-top: -6rem;
+}
+.reservation-container .form-container form{
+    width: 50vw;
+    background: var(--background-color);
+}
+.reservation-container .form-container form h1{
+    color: var(--color);
+}
+.reservation-container .form-container form p{
+    text-align: center;
+}
+/*-----------contact us--------------*/
+.services{
+    padding: 5% 10%;
+    background-image: url('image/banner.png');
+    background-repeat: no-repeat;
+    position: relative;
+    color: var(--lightgray);
+    align-items: center;
+}
+.services h1{
+    color: var(--color);
+}
+.services .box-container{
+    grid-template-columns: repeat(auto-fit,minmax(20rem, 1fr));
+}
+.services .box-container .box{
+    box-shadow: var(--inner-box-shadow);
+    background: var(--background-color);
+    margin: 1rem;
+    text-align: center;
+    padding: 1rem;
+    border-radius: .5rem;
+    line-height: 1.5;
+}
+.services .box-container .box img{
+    box-shadow: var(--inner-box-shadow);
+    padding: 1rem;
+    border-radius: 50%;
+}
+.services .box-container .box div{
+    margin-left: 2rem;
+}
+.services .box-container .box h1{
+    font-size: 25px;
+    color: var(--color);
+    margin: .5rem 0;
+    text-transform: capitalize;
+}
+.contact{
+    max-width: 60vw;
+    min-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+.contact .img-box{
+    margin: 0 auto;
+    text-align: center;
+}
+.contact .btn{
+    width: 100%;
+    margin: 1rem auto;
+}
+.address{
+    padding: 5% 8%;
+    min-height: 50vh;
+}
+.address .box-container{
+    justify-content: center;
+    align-items: center;
+}
+.address .box-container .box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;box-shadow: var(--inner-box-shadow);
+    line-height: 2;
+    padding: 1rem 0;
+    color: var(--lightgray);
+}
+.address .box-container .box h4{
+    text-transform: uppercase;
+    color: #5acd4c;
+}
+.address .box-container .box i{
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--outer-shadow);
+    color: var(--orange);
+}
+/*-----------checkout page--------------*/
+.checkout .row{
+    display: flex;
+    flex-direction: column;
+    flex-flow: column-reverse;
+}
+.checkout .row form,
+.checkout .summary{
+    box-shadow: var(--inner-box-shadow);
+    border-radius: .5rem;
+    width: 1000px;
+    padding: 1rem;
+    margin: 1rem auto;
+}
+.checkout .row h3{
+    font-size: 2rem;
+    color: var(--lightgray);
+    padding-bottom: 1rem;
+    text-transform: capitalize;
+    text-align: center;
+    color: var(--orange);
+}
+.checkout .row form .input{
+    width: 100%;
+    padding: 1rem;
+    color: var(--lightgray);
+    font-size: 1.1rem;
+    margin: 1rem 0;
+}
+.checkout .row form .flex{
+    display: flex;
+    column-gap: 1.5rem;
+    flex-wrap: wrap;
+}
+.checkout .row form .flex .box{
+    flex: 1 1 20rem;
+}
+.checkout .row form p{
+    text-align: left;
+    padding-top: .5rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    color: var(--lightgray);
+}
+.checkout .row form .btn{
+    width: 100%;
+}
+.summary .title{
+    font-size: 2.2rem;
+    color: var(--orange);
+    margin-bottom: .5rem;
+    text-transform: capitalize;
+    padding-bottom: 1.5rem;
+}
+.summary .flex{
+    box-shadow: var(--inner-box-shadow);
+    border-radius: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+    margin: .5rem;
+}
+.summary .flex img{
+    box-shadow: var(--outer-shadow);
+    border-radius: 50%;
+    width: 25%;
+    height: 100px;
+    padding: .4rem;
+    margin-right: 2rem;
+}
+.summary .flex .name{
+    font-size: 1.1rem;
+    padding-bottom: .5rem;
+    text-transform: capitalize;
+    color: var(--color);
+}
+.summary .flex .price{
+    font-size: 1.5rem;
+    color: red;
+}
+.summary .grand-total{
+    box-shadow: var(--outer-shadow);
+    border-radius: .5rem;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 2rem;
+    margin-top: 1.5rem;
+    text-transform: capitalize;
+}
+.summary .grand-total span{
+    color: var(--lightgray);
+}
+.summary .grand-total p{
+    color: red;
+    margin-left: .5rem;
 }
