@@ -44,7 +44,7 @@
                 while ($f_cart = $verify_cart->fetch(PDO::FETCH_ASSOC)) {
                     $insert_order = $conn->prepare("INSERT INTO `orders`(id,user_id,name,number,email,address,address_type,method,product_id,price,qty) 
                     VALUES(?,?,?,?,?,?,?,?,?,?,?)");
-                    $insert_order->execute([$id,$user_id,$name,$number,$email,$address,$address_type,$method,$f_cart['id'],$f_cart['price'],$f_cart['qty']]);
+                    $insert_order->execute([$id,$user_id,$name,$number,$email,$address,$address_type,$method,$f_cart['product_id'],$f_cart['price'],$f_cart['qty']]);
                     header('location: order.php');
                 }if ($insert_order) {
                     $delete_cart_id = $conn->prepare("DELETE FROM `cart` WHERE user_id=?");
