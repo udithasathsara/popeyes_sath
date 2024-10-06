@@ -7,6 +7,7 @@
     }else {
         $user_id = '';
     }
+    //fffffff
     //update cart product quantity
     if (isset($_POST['update_cart'])) {
         $cart_id = $_POST['cart_id'];
