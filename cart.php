@@ -21,6 +21,9 @@
         $success_msg[] = 'cart quantity updated successfully';
     }
     //delete product in cart
+    /*delete
+    wnd
+    eeeee8*/
     if (isset($_POST['delete_item'])) {
         $cart_id = $_POST['cart_id'];
         $cart_id = filter_var($cart_id, FILTER_SANITIZE_STRING);
